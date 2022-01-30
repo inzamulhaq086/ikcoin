@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                            <a href="forms.html"
+                            <a href="{{Route('gastar')}}"
                             class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                                 <i class="fab fa-wpforms float-left mx-2"></i>
                                 Forms

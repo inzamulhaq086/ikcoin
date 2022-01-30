@@ -1,8 +1,6 @@
-<header class="relative "
-        style="background-image: url('frontend/image/home.png'); background-repeat: no-repeat; background-size: 100% 100%; ">
-
+<header class="relative z-20"
+        style="">
         <!-- ==========================NAV BAR START========================== -->
-
         <div class="w-full ">
             <nav class="mx-auto px-4 sm:py-8 py-2 max-width">
                 <div class="row items-center justify-between">
@@ -12,17 +10,17 @@
                     <div class="w-5/6 px-4 lg:flex hidden nav-bar justify-between">
                         <ul class="w-full flex justify-between space-x-3">
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
-                                    href="Home.html">Home</a></li>
+                                    href="{{ route('home') }}">Home</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
-                                    href="Ourvalues.html">iK Finance</a></li>
+                                    href="{{ route('business') }}">iK Finance</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
-                                    href="Contacts.html">Parsonal</a></li>
+                                    href="{{ route('team') }}">Parsonal</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
-                                    href="Services.html">Merchant</a></li>
+                                    href="{{ route('algarve') }}">Merchant</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
                                     href="Services.html">Advantages</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
-                                    href="Services.html">Where to buy</a></li>
+                                    href="{{ route('buy') }}">Where to buy</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
                                     href="Services.html">Where to spend</a></li>
                             <li class="text-gray-300 hover:text-primary-color font-semibold"><a class="relative"
@@ -83,9 +81,5 @@
                 </div>
             </nav>
         </div>
-
-        <!-- ==========================NAV BAR END========================== -->
-
-        <!-- ========================= BANNER START =========================== -->
-        @include('frontend.layouts.banner')        
+        <!-- ==========================NAV BAR END========================== -->           
     </header>
