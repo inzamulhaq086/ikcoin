@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gastar;
+use App\Models\RoadMap;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -39,4 +40,29 @@ class DashboardController extends Controller
         }
         return back()->with('SUCCESS',"Added Successfully");
     }
+    public function roadmap(){
+        return view('backend.roadmap');
+    }
+    public function roadmapStore(Request $request){
+        $request->validate([
+            'name' => 'required|max:25',
+            'year' => 'required',
+            'title' => 'required|max:120',
+            'discription' => 'required',
+            'coin_img' => 'required|mimes:jpg,bmp,png|max:2048',
+        ]);
+
+        $roadmap = RoadMap::create([
+            'name' => $request->name,
+            'year' => $request->year,
+            'title' => $request->title,
+            'discription' => $request->discription,
+            'coin_img' => $request->file('coin_img')->store('images/coins'),
+        ]);
+        if(empty($roadmap)){
+            return back()->with('ERROR',"Fill Kor age");
+        }
+        return back()->with('SUCCESS',"Valo Korsesis");
+    }
+
 }

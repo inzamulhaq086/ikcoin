@@ -23,3 +23,5 @@ Route::get('/business',[DashboardController::class, 'business'])->name('business
 Route::get('/algarve',[DashboardController::class, 'algarve'])->name('algarve');
 Route::get('/gaster',[DashboardController::class, 'gastar'])->name('gastar');
 Route::post('/gaster',[DashboardController::class, 'gastarStore'])->name('gastar.store');
+Route::get('/roadmap',[DashboardController::class, 'roadmap'])->name('roadmap');
+Route::post('/roadmap_post',[DashboardController::class, 'roadmapStore'])->name('roadmap.store');

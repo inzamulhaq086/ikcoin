@@ -135,6 +135,7 @@
 
 
             <!--============================= USAR START============================== -->
+            @if(!empty($gastars))
             <div class="relative"
                 style="background-image: url('frontend/image/banner-bg.jpg'); background-repeat: no-repeat; background-size: 100% 100%; ">
                 <div class="max-width mx-auto px-4 lg:py-60 md:py-28 py-16 md:space-y-20 space-y-10 ">
@@ -147,7 +148,6 @@
                         </div>
                     </div>
                     <div class="row ">
-                        @if(!empty($gastars))
                             @foreach ( $gastars as $gastar)
                                 <div class="w-full px-4 my-4 md:w-1/4 sm:w-1/2 ">
                                     <div class="card-color  text-center space-y-9 rounded-2xl group py-14 relative px-2">
@@ -159,14 +159,15 @@
                                     </div>
                                 </div>
                             @endforeach
-                        @endif                        
+                        </div>
                     </div>
                 </div>
-            </div>
+                @endif                        
             <!--============================= USAR END ============================== -->
 
 
             <!-- =============================ROAD MAP START =================================== -->
+            @if(!empty($roadmaps))
             <div class="">
                 <div class="max-width mx-auto px-12 py-16 md:py-32 lg:py-40">
                     <div class="pb-20 lg:pb-32">
@@ -178,202 +179,25 @@
                             <span
                                 class="absolute top-0 left-0 w-full h-16 bg-gradient-to-t from-transparent to-white"></span>
                         </div>
-                        <!-- 1  -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Junho,2020</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Nasce a IK Tech Solutions</h1>
-                                <p class="para text-gray-700">As nossas soluções englobam
-                                    3 segmentos:Logístico, compra & vendas e financeiro. Que formam um ecossistema que se
-                                    completa. Para este desenvolvimento foi planeado 3 plataformas: iK Log (logística), ik
-                                    Fintech (finanças e pagamentos) e Shop
-                                    Digital (compra e vendas).</p>
-                            </div>
-                        </div>
-
                         <!-- 2  -->
+                        @foreach ($roadmaps as $roadmap )
                         <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
                             <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
+                                <img class="w-20 sm:w-32" src="{{asset('storage/'.$roadmap->coin_img)}}" alt="" >
                             </div>
                             <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Agosto, 2020</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Planeamento e Desenvolvimento</h1>
+                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">{{$roadmap->name}}, {{$roadmap->year}}</p>
+                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">{{$roadmap->title}}</h1>
                                 <div class="text-sm sm:text-md md:text-lg leading-relaxed lg:leading-loose">
-                                    <p class="text-gray-700"><span class="text-primary-color font-bold">FASE 1</span> -
-                                        IK Business
-                                        - Plataforma para B2B.</p>
-                                    <p class="text-gray-700 "><span class="text-primary-color font-bold">FASE 2</span> -
-                                        IK
-                                        Excecutive - Plataforma de digitalização de
-                                        empresas de transportes</p>
-                                    <p class="text-gray-700"><span class="text-primary-color font-bold">FASE 3</span> -
-                                        My IK -
-                                        Plataforma de solicitação rápida de transporte e logística. B2C </p>
-                                    <p class="text-gray-700"><span class="text-yellow-400 font-bold">Fase 4</span> - IK
-                                        Business -
-                                        Plataforma para B2B.</p>
+                                    <p class="text-gray-700">{{$roadmap->discription}}</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 3 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Marco,2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Dia 15 inicia-se a fase 3, da venda
-                                    privadgray-700 milhões de tokens
-                                    a U$ 0,02</h1>
-                            </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Maio 2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Planeamento e início de
-                                    desenvolvimento (Fintech)</h1>
-                                <div class="para">
-                                    <p class="text-gray-700"><span class="text-primary-color font-bold">FASE 1</span> -
-                                        IK Ikcoin</p>
-                                    <p class="text-gray-700 "><span class="text-primary-color font-bold">FASE 2</span> -
-                                        IK
-                                        ntermediador de pagamentos e transações Financeiras</p>
-                                    <p class="text-gray-700"><span class="text-primary-color font-bold">FASE 3</span> -
-                                        My Banco Digital</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Junho,2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Abertura da Empresa em Portugal</h1>
-                                <p class="text-sm sm:text-md md:text-lg text-gray-700 mb-10">Hospedagem das Apps My IK e IK
-                                    Executive na Play Store.</p>
-                                <p class="para text-gray-700">
-                                    Digitalização de Empresas de transportes através da plataforma IK Executive.
-                                    Digitalização de Empresas de transportes através da plataforma IK Executive.</p>
-                            </div>
-                        </div>
-                        <!-- 6 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Setembro, 2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Primeiro Contrato de distribuição e
-                                    logística para uma grande rede de
-                                    lojas no setor mobiliário</h1>
-                            </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Outubro, 2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Finalização do desenvolvimento e
-                                    contrato inteligente da iK Coin.</h1>
-                                <p class="text-sm sm:text-md md:text-lg text-gray-700 leading-relaxed lg:leading-loose">
-                                    Lançamento do site da iK Coin</p>
-                            </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Novembro, 2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Pré-venda da primeira fase</h1>
-                                <p class="para text-gray-700">Dia 15 inicia-se a fase 1 da venda privada de 800 milhões de
-                                    tokens a U$ 0,005</p>
-                            </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Dezembro, 2021</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Dia 15 inicia-se a fase 2, da venda
-                                    privada de 400 milhões de tokens
-                                    a U$ 0,01</h1>
-                            </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Janeiro, 2022</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Dia 15 inicia-se a fase 3, da venda
-                                    privada de 300 milhões de tokens
-                                    a U$ 0,02</h1>
-                            </div>
-                        </div>
-                        <!-- 11 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Fevereiro, 2022</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Lançamento do Shop Digital
-                                    ( marketplace + entregas e logísticas
-                                    + Plataforma de Pagamento )</h1>
-                            </div>
-                        </div>
-                        <!-- 12 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Julho, 2022</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Inicio dos serviços financeiros e
-                                    de créditos</h1>
-                            </div>
-                        </div>
-                        <!-- 13 -->
-                        <div class="w-full xl:w-1/2 relative xl:pr-24 pl-16 sm:pl-40 xl:pl-0 mb-32">
-                            <div class="absolute xl:-right-16 left-0 xl:left-auto">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8 text-left xl:text-right">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Setembro, 2023</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Tornar a Fintech um Banco Digital</h1>
-                            </div>
-                        </div>
-                        <!-- 14 -->
-                        <div class="ml-auto w-full xl:w-1/2 relative xl:pl-24 pl-16 sm:pl-40">
-                            <div class="absolute xl:-left-16 left-0">
-                                <img class="w-20 sm:w-32" src="{{ asset('frontend/image/ikcoin.png') }}" alt="">
-                            </div>
-                            <div class="sm:pr-8 pr-0  pl-8">
-                                <p class="text-primary-color text-sm sm:text-md md:text-lg font-bold">Julho, 2024</p>
-                                <h1 class="text-xl md:text-2xl pt-4 pb-6 font-bold">Inicio da Expansão mundial</h1>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
+            @endif
             <!-- =============================ROAD MAP END =================================== -->
 
 
